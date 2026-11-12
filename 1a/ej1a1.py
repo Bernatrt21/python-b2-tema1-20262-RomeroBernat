@@ -38,22 +38,25 @@ from typing import ByteString, Union
 
 def text_to_bytes(text: str) -> bytes:
     # Write here your code
-    pass
+    text = text.encode('utf-8')
+    return text
 
 
 def reverse_bytes(bytes_data: ByteString) -> bytearray:
     # Write here your code
-    pass
+    return bytearray(bytes_data[::-1])
 
 
 def increment_bytearray_rollover(byte_array: bytearray) -> bytearray:
     # Write here your code
-    pass
-
+    for byte in range(len(byte_array)):
+        byte_array[byte] = byte_array[byte] + 1
+    return byte_array
 
 def bytes_to_text(bytes_data: Union[bytes, bytearray]) -> str:
     # Write here your code
-    pass
+    return bytes_data.decode('utf-8')
+
 
 
 # Para probar el código, descomenta las siguientes líneas
